@@ -1,0 +1,148 @@
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+
+$color-grey-dark: #777;
+
+.section-features {
+	padding: 15rem 0;
+	background-image: linear-gradient(
+			to right bottom,
+			rgba($color-primary-light, 0.8),
+			rgba($color-primary-dark, 0.8)
+		),
+		url(../../images/nat-4.jpg);
+	background-size: cover;
+	transform: skewY(-7deg);
+	margin-top: 5rem;
+	margin: 2rem;
+
+	@media (max-width: 900px) {
+		padding: 10rem 0;
+	}
+
+	& > * {
+		transform: skewY(7deg);
+	}
+}
+
+.row {
+	max-width: 114rem;
+	margin: 0 auto;
+
+	&:not(:last-child) {
+		margin-bottom: 8rem;
+
+		@media (max-width: 900px) {
+			margin-bottom: 6rem;
+		}
+	}
+
+	@media (max-width: 900px) {
+		max-width: 50rem;
+		padding: 0 3rem;
+	}
+
+	// @include clearfix;
+	&::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+	[class^="col-"] {
+		float: left;
+
+		&:not(:last-child) {
+			margin-right: 2rem;
+
+			@media (max-width: 900px) {
+				margin-right: 1rem;
+				margin-bottom: 6rem;
+			}
+		}
+
+		&:last-child {
+			@media (max-width: 900px) {
+				margin-bottom: 6rem;
+			}
+		}
+
+		@media (max-width: 900px) {
+			width: 100% !important;
+		}
+	}
+}
+
+.col-1-of-4 {
+	width: calc((100% - #{6rem} * 3) / 4);
+}
+
+.feature-box {
+	background-color: rgba(white, 0.8);
+	font-size: 1rem;
+	padding: 1.1rem;
+	text-align: center;
+	border-radius: 3px;
+	box-shadow: 0 1.5rem 4rem rgba(black, 0.15);
+	transition: transform 0.3s;
+
+	@media (max-width: 900px) {
+		font-size: 0.75rem;
+		padding: 0.5rem;
+	}
+
+	&__icon {
+		font-size: 4rem;
+		margin-bottom: 0.5rem;
+		display: inline-block;
+		background-image: linear-gradient(
+			to right,
+			$color-primary-light,
+			$color-primary-dark
+		);
+		-webkit-background-clip: text;
+		color: transparent;
+
+		@media (max-width: 900px) {
+			margin-bottom: 0;
+			font-size: 2.5rem;
+		}
+	}
+
+	&:hover {
+		transform: translateY(-1.5rem) scale(1.03);
+	}
+
+	&__text {
+		font-size: 0.9rem;
+		color: $color-grey-dark;
+		line-height: 1.5rem;
+	}
+}
+
+.heading-tertiary-features {
+	font-size: 1.1rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: $color-grey-dark;
+
+	@media (max-width: 900px) {
+		font-size: 0.85rem;
+	}
+
+	@media (max-width: 768px) {
+		display: none;
+	}
+}
+
+.u-margin-bottom-small {
+	margin-bottom: 1.5rem;
+}
+
+.center {
+	display: flex;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+}

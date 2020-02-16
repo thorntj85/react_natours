@@ -1,0 +1,140 @@
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
+
+$color-grey-dark: #777;
+$color-grey-dark-2: #999;
+$color-grey-dark-3: #333;
+
+.footer {
+	background-color: $color-grey-dark-3;
+	padding: 8rem 2rem;
+	font-size: 0.9rem;
+	color: $color-grey-light-1;
+	margin: 0 2rem 2rem 2rem;
+
+	@media (max-width: 900px) {
+		padding: 8rem 0;
+	}
+
+	&__logo-box {
+		text-align: center;
+		margin-bottom: 6rem;
+
+		@media (max-width: 900px) {
+			margin-bottom: 4rem;
+		}
+	}
+
+	&__logo {
+		width: 15rem;
+		height: auto;
+	}
+
+	&__navigation {
+		border-top: 0.05rem solid $color-grey-light-2;
+		margin-top: 2rem;
+		display: inline-block;
+
+		font-weight: 600;
+
+		@media (max-width: 900px) {
+			width: 100%;
+			text-align: center;
+		}
+	}
+
+	&__list {
+		list-style: none;
+	}
+
+	&__item {
+		display: inline-block;
+
+		&:not(:last-child) {
+			margin-right: 1.5rem;
+		}
+	}
+
+	&__link {
+		&:link,
+		&:visited {
+			color: $color-grey-light-1;
+			background-color: $color-grey-dark-3;
+			text-decoration: none;
+			text-transform: uppercase;
+			display: inline-block;
+			transition: all 0.2s;
+		}
+
+		&:hover,
+		&:active {
+			color: $color-primary;
+			box-shadow: 0 1rem 2rem rgba(black, 0.4);
+			transform: rotate(5deg) scale(1.3);
+		}
+	}
+	&__copyright {
+		border-top: 1px solid $color-grey-light-2;
+		margin-top: 2rem;
+		padding-top: 1rem;
+		width: 80%;
+		float: right;
+
+		font-weight: 600;
+		line-height: 1.5rem;
+
+		@media (max-width: 900px) {
+			width: 100%;
+			float: none;
+		}
+	}
+}
+
+.row-footer {
+	max-width: 144rem;
+	margin: 0 auto;
+
+	&:not(:last-child) {
+		margin-bottom: 8rem;
+
+		@media (max-width: 900px) {
+			margin-bottom: 6rem;
+		}
+	}
+
+	@media (max-width: 900px) {
+		max-width: 50rem;
+		padding: 0 3rem;
+	}
+
+	&::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+	[class^="col-"] {
+		float: left;
+
+		&:not(:last-child) {
+			margin-right: 6rem;
+
+			@media (max-width: 900px) {
+				margin-right: 0;
+				margin-bottom: 6rem;
+			}
+		}
+
+		@media (max-width: 900px) {
+			width: 100% !important;
+		}
+	}
+}
+
+.col-1-of-2 {
+	width: calc((100% - #{6rem}) / 2);
+}
